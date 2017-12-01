@@ -1,0 +1,21 @@
+[package]
+name = "snappy-sys"
+version = "0.1.0"
+authors = ["Arkadiy Paronyan arkadiy@ethcore.io>"]
+license = "MIT/Apache-2.0/BSD"
+description = "Native bindings to libsnappy"
+readme = "README.md"
+keywords = [ "ffi", "snappy" ]
+
+build = "build.rs"
+links = "snappy"
+
+[features]
+default = [ "static" ]
+static = []
+
+[dependencies]
+libc = "0.2"
+
+[build-dependencies]
+gcc = { version = "0.3", features = ["parallel"] }

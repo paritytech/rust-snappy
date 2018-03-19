@@ -1,7 +1,7 @@
-extern crate gcc;
+extern crate cc;
 
 fn main() {
-	let mut snappy_config = gcc::Config::new();
+	let mut snappy_config = cc::Build::new();
 	snappy_config.include("snappy/");
 	snappy_config.include(".");
 

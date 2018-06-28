@@ -61,8 +61,9 @@ pub fn decompressed_len(compressed: &[u8]) -> Result<usize, InvalidInput> {
 
 /// Compress a buffer using snappy.
 pub fn compress(input: &[u8]) -> Vec<u8> {
-	let mut buf = Vec::new();
-	compress_into(input, &mut buf);
+	let mut buf = Vec::with_capacity(0);
+	let size = compress_into(input, &mut buf);
+	buf.truncate(size);
 	buf
 }
 

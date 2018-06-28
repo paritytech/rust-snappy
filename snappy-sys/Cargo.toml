@@ -5,17 +5,16 @@ authors = ["Arkadiy Paronyan arkadiy@ethcore.io>"]
 license = "MIT/Apache-2.0/BSD"
 description = "Native bindings to libsnappy"
 readme = "README.md"
-keywords = [ "ffi", "snappy" ]
+keywords = ["ffi", "snappy"]
 
 build = "build.rs"
 links = "snappy"
 
 [features]
-default = [ "static" ]
-static = []
+default = []
 
 [dependencies]
 libc = "0.2"
 
 [build-dependencies]
-cc = { version = "1.0", features = ["parallel"] }
+cmake = "0.1"

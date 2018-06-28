@@ -6,3 +6,6 @@ authors = ["Parity Technologies <admin@parity.io>"]
 [dependencies]
 libc = "0.2.7"
 snappy-sys = { path = "snappy-sys" }
+
+[dev-dependencies]
+rand = "0.5"

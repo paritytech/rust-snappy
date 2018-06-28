@@ -17,6 +17,8 @@
 //! Snappy compression bindings.
 extern crate snappy_sys;
 extern crate libc;
+#[cfg(test)]
+extern crate rand;
 
 use snappy_sys as snappy;
 use libc::{c_char, size_t};
@@ -129,4 +131,30 @@ pub fn decompress_into(input: &[u8], output: &mut Vec<u8>) -> Result<usize, Inva
 pub fn validate_compressed_buffer(input: &[u8]) -> bool {
 	let status = unsafe { snappy::snappy_validate_compressed_buffer(input.as_ptr() as *const c_char, input.len() as size_t )};
 	status == snappy::SNAPPY_OK
+}
+
+#[cfg(test)]
+mod tests {
+	use super::*;
+	use rand::prelude::*;
+
+	const ITERATIONS: usize = 100;
+	const INPUT_SIZE: usize = 1 << 18;
+
+	#[test]
+	fn it_works() {
+		let mut rng = thread_rng();
+		let mut input = [0u8; INPUT_SIZE];
+
+		for _ in 0..ITERATIONS {
+			rng.fill(&mut input[..]);
+
+			let output = decompress(&compress(&input));
+
+			match output {
+				Err(err) => panic!("failed with error: {} for input: {:?}", err, input.to_vec()),
+				Ok(output) => assert_eq!(input.to_vec(), output),
+			}
+		}
+	}
 }

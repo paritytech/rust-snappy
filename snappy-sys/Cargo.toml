@@ -3,8 +3,8 @@ name = "parity-snappy-sys"
 version = "0.1.0"
 authors = ["Parity Technologies <admin@parity.io>"]
 license = "MIT/Apache-2.0/BSD"
+repository = "https://github.com/paritytech/rust-snappy.git"
 description = "Native bindings to libsnappy"
-readme = "README.md"
 keywords = ["ffi", "snappy"]
 
 build = "build.rs"

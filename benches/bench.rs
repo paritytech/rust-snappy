@@ -1,14 +1,14 @@
 #![feature(test)]
 extern crate test;
 
-extern crate rand;
 extern crate parity_snappy as snappy;
+extern crate rand;
 
 #[cfg(test)]
 mod tests {
-	use test::Bencher;
 	use rand::prelude::*;
 	use snappy;
+	use test::Bencher;
 
 	const INPUT_SIZE: usize = 1 << 19;
 

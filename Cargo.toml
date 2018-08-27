@@ -1,11 +1,11 @@
 [package]
-name = "snappy"
+name = "parity-snappy"
 version = "0.1.0"
 authors = ["Parity Technologies <admin@parity.io>"]
 
 [dependencies]
 libc = "0.2"
-snappy-sys = { path = "snappy-sys" }
+parity-snappy-sys = { path = "snappy-sys" }
 
 [dev-dependencies]
 rand = "0.5"

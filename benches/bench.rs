@@ -2,7 +2,7 @@
 extern crate test;
 
 extern crate rand;
-extern crate snappy;
+extern crate parity_snappy as snappy;
 
 #[cfg(test)]
 mod tests {

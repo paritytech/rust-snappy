@@ -6,7 +6,7 @@
 Rust bindings for the snappy compression library.
 
 Currently this library uses snappy v1.1.7. The source for snappy is included in the `parity-snappy-sys` crate, so
-there's no need to pre-install the snappy, and the library will be statically linked.
+there's no need to pre-install snappy, and the library will be statically linked.
 
 ## Example
 

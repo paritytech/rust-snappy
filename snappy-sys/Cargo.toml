@@ -1,10 +1,10 @@
 [package]
-name = "snappy-sys"
+name = "parity-snappy-sys"
 version = "0.1.0"
-authors = ["Arkadiy Paronyan arkadiy@ethcore.io>"]
-license = "MIT/Apache-2.0/BSD"
+authors = ["Parity Technologies <admin@parity.io>"]
+license = "GPL-3.0"
+repository = "https://github.com/paritytech/rust-snappy.git"
 description = "Native bindings to libsnappy"
-readme = "README.md"
 keywords = ["ffi", "snappy"]
 
 build = "build.rs"

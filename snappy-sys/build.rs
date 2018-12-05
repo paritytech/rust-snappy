@@ -19,7 +19,7 @@ fn main() {
 	let target_os = env::var("CARGO_CFG_TARGET_OS").expect("CARGO_CFG_TARGET_OS is set by cargo.");
 	let target_env = env::var("CARGO_CFG_TARGET_ENV").expect("CARGO_CFG_TARGET_ENV is set by cargo.");
 
-	if target_os.contains("windows") {
+	if target_os.contains("windows") && target_env.contains("msvc") {
 		let stub = build.join("snappy-stubs-public.h");
 
 		let profile = match &*env::var("PROFILE").unwrap_or("debug".to_owned()) {
